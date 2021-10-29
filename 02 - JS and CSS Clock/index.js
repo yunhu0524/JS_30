@@ -1,5 +1,3 @@
-//clearInterval
-
 // 1. 1초마다 함수를 호출 해준다.
 // 2. Date() 함수를 사용해 시, 분, 초를 가져와 각 element에 적용 해준다.
 const secondHand = document.querySelector(".second-hand");
