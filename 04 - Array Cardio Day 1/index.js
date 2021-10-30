@@ -19,47 +19,47 @@ const inventors = [
 ];
 
 const people = [
-  "Bernhard, Sandra",
-  "Bethea, Erin",
-  "Becker, Carl",
+  "Aernhard, Sandra",
+  "Aethea, Erin",
+  "Aecker, Carl",
   "Bentsen, Lloyd",
   "Beckett, Samuel",
   "Blake, William",
-  "Berger, Ric",
-  "Beddoes, Mick",
-  "Beethoven, Ludwig",
-  "Belloc, Hilaire",
-  "Begin, Menachem",
-  "Bellow, Saul",
-  "Benchley, Robert",
-  "Blair, Robert",
-  "Benenson, Peter",
-  "Benjamin, Walter",
-  "Berlin, Irving",
-  "Benn, Tony",
-  "Benson, Leana",
-  "Bent, Silas",
-  "Berle, Milton",
-  "Berry, Halle",
-  "Biko, Steve",
-  "Beck, Glenn",
-  "Bergman, Ingmar",
-  "Black, Elk",
-  "Berio, Luciano",
-  "Berne, Eric",
-  "Berra, Yogi",
-  "Berry, Wendell",
-  "Bevan, Aneurin",
+  "Cerger, Ric",
+  "Ceddoes, Mick",
+  "Ceethoven, Ludwig",
+  "Celloc, Hilaire",
+  "Cegin, Menachem",
+  "Dellow, Saul",
+  "Denchley, Robert",
+  "Dlair, Robert",
+  "Denenson, Peter",
+  "Denjamin, Walter",
+  "Ferlin, Irving",
+  "Fenn, Tony",
+  "Fenson, Leana",
+  "Fent, Silas",
+  "Gerle, Milton",
+  "Gerry, Halle",
+  "Giko, Steve",
+  "Geck, Glenn",
+  "Eergman, Ingmar",
+  "Elack, Elk",
+  "Eerio, Luciano",
+  "Herne, Eric",
+  "Herra, Yogi",
+  "Herry, Wendell",
+  "Ievan, Aneurin",
   "Ben-Gurion, David",
   "Bevel, Ken",
   "Biden, Joseph",
-  "Bennington, Chester",
-  "Bierce, Ambrose",
-  "Billings, Josh",
-  "Birrell, Augustine",
-  "Blair, Tony",
-  "Beecher, Henry",
-  "Biondo, Frank",
+  "Aennington, Chester",
+  "Aierce, Ambrose",
+  "Aillings, Josh",
+  "Cirrell, Augustine",
+  "Clair, Tony",
+  "Ceecher, Henry",
+  "Ciondo, Frank",
 ];
 
 // Array.prototype.filter()
@@ -112,8 +112,8 @@ console.table(oldest);
 // 7. sort Exercise
 // 성을 기준으로 사람들을 알파벳순으로 정렬
 const alpaha = people.sort(function (lastOne, nextOne) {
-  const [aLast, aFirst] = lastOne.split(", ");
-  const [bLast, bFirst] = nextOne.split(", ");
+  const aLast = lastOne.split(", ");
+  const bLast = nextOne.split(", ");
   return aLast > bLast ? 1 : -1;
 });
 const alpaha1 = people.sort((lastOne, nextOne) => {
@@ -121,6 +121,7 @@ const alpaha1 = people.sort((lastOne, nextOne) => {
   const [bLast, bFirst] = nextOne.split(", ");
   return aLast > bLast ? 1 : -1;
 });
+console.log(alpaha1);
 console.log(alpaha);
 // 8. Reduce Exercise
 // 이들 각각의 인스턴스를 요약합니다.
