@@ -1,20 +1,23 @@
-// keydown 이벤트 발생시 playSound 함수
+// 필요한 이벤트 밑 변수
+// keydown 이벤트 생성
 window.addEventListener("keydown", playSound);
 const keys = document.querySelectorAll(".key");
 keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
-// playSound ()
+
+// 사운드를 내는 로직 + 호버 액션
 function playSound(e) {
-  // audio + data-key 접근
+  // 사운드 재생 로직
+  // data-key 를 설정해준 코드 값에 맞게 사운드가 재생 되어야한다.
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  // audio 가 아닐경우 return
+  // audio가 아니면 return
   if (!audio) return;
-  // audio.add()
+  // audio play
   audio.play();
-  // currentTime 초기화 필요
-  // audio.currentTime = 0
+  // audio 를 반복클릭할 수 있게 currentTime 을 0 로 바꿔 준다.
   audio.currentTime = 0;
+  // hover action 을 줘서 임팩트가 생기게 해준다.
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  // .playing 클래스 추가
+  // hover action 추가
   key.classList.add("playing");
 }
 
