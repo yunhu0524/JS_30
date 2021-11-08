@@ -14,33 +14,33 @@ const skipButtons = player.querySelectorAll("[data-skip]");
 // 볼륨, 재생속도
 const ranges = player.querySelectorAll(".player__slider");
 
+/* Build out functions */
+// ► 버튼 클릭 이벤트 함수
 function togglePlay() {
   const method = video.paused ? "play" : "pause";
   video[method]();
-
-  // if (video.paused) {
-  //   video.play();
-  // } else {
-  //   video.pause();
-  // }
 }
+// 재생 / 일시정지 기능 함수
 function updateButton() {
   const icon = this.paused ? "►" : "❚ ❚";
   toggle.textContent = icon;
 }
+// -10 / +25 구간 점프 함수
 function skip() {
-  console.log(this.dataset.skip);
   video.currentTime += parseFloat(this.dataset.skip);
 }
-
+// 볼륨 / 재생 속도
 function handleRangeUpdate() {
   video[this.name] = this.value;
+  console.log(this.name);
 }
-
+// 재생 시간 표시줄( 전체 )
 function handleProgress() {
   const percent = (video.currentTime / video.duration) * 100;
   progressBar.style.flexBasis = `${percent}%`;
 }
+
+// 재생 시간 표시
 
 function scrub(e) {
   // 진행중인 offset / 전체 width * 지속 시간
@@ -50,6 +50,7 @@ function scrub(e) {
   const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
   video.currentTime = scrubTime;
 }
+
 // video 전체 클릭 이벤트
 video.addEventListener("click", togglePlay);
 // video play 이벤트
@@ -63,6 +64,7 @@ video.addEventListener("timeupdate", handleProgress);
 toggle.addEventListener("click", togglePlay);
 // skip
 skipButtons.forEach((button) => button.addEventListener("click", skip));
+// 볼륨 재생 속도
 ranges.forEach((range) => range.addEventListener("change", handleRangeUpdate));
 ranges.forEach((range) =>
   range.addEventListener("mousemove", handleRangeUpdate)
