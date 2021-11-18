@@ -4,12 +4,14 @@ const seconds = timeNodes
   .map((node) => node.dataset.time)
   .map((timeCode) => {
     const [mins, secs] = timeCode.split(":").map(parseFloat);
+    // parseFloat => 소수
     return mins * 60 + secs;
   })
   .reduce((total, vidSeconds) => total + vidSeconds);
 
 let secondsLeft = seconds;
 
+// Math.floor 소수점 날려준다.
 const hours = Math.floor(secondsLeft / 3600);
 secondsLeft = secondsLeft % 3600;
 
